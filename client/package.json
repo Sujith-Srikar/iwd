@@ -11,13 +11,17 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.25.2",
+    "@tabler/icons-react": "^3.31.0",
     "@tailwindcss/vite": "^4.0.15",
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
     "lucide-react": "^0.483.0",
     "motion": "^12.5.0",
+    "ogl": "^1.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.4.0",
+    "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.15"
   },
   "devDependencies": {

@@ -28,10 +28,8 @@ const SlideTabs = () => {
       className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
     >
       <Tab setPosition={setPosition}>Home</Tab>
-      <Tab setPosition={setPosition}>Pricing</Tab>
       <Tab setPosition={setPosition}>Features</Tab>
-      <Tab setPosition={setPosition}>Docs</Tab>
-      <Tab setPosition={setPosition}>Blog</Tab>
+      <Tab setPosition={setPosition}>Protect</Tab>
 
       <Cursor position={position} />
     </ul>
@@ -91,7 +89,7 @@ function Navbar() {
 
   return (
     <header
-      className={`w-full fixed transition-all duration-300 ${
+      className={`w-full fixed z-10 transition-all duration-300 ${
         scrolled ? "backdrop-blur-md" : "bg-transparent"
       }`}
     >
