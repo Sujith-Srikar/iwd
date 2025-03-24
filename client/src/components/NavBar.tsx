@@ -2,13 +2,13 @@ import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { motion } from "motion/react";
 import useScroll from "../lib/hooks/use-scroll";
 
-const SlideTabsExample = () => {
-  return (
-    <div className="bg-neutral-100 py-20">
-      <SlideTabs />
-    </div>
-  );
-};
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
+
 
 const SlideTabs = () => {
   const [position, setPosition] = useState<Position>({
@@ -92,9 +92,7 @@ function Navbar() {
   return (
     <header
       className={`w-full fixed transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md"
-          : "bg-transparent"
+        scrolled ? "backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between">
@@ -105,9 +103,17 @@ function Navbar() {
           <SlideTabs />
         </nav>
         <div className="mt-4 md:mt-0">
-          <button className="bg-white text-black text-[14px] font-semibold py-2 px-6 rounded-md shadow hover:bg-gray-100 cursor-pointer transition">
+          {/* <button className="bg-white text-black text-[14px] font-semibold py-2 px-6 rounded-md shadow hover:bg-gray-100 cursor-pointer transition">
             Get Started
-          </button>
+          </button> */}
+          <div className="bg-white text-black text-[14px] font-semibold py-2 px-6 rounded-md shadow hover:bg-gray-100 cursor-pointer transition">
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </div>
         </div>
       </div>
     </header>
